@@ -5,6 +5,7 @@
   "main": "public/index.html",
   "author": "5t3ph",
   "scripts": {
+    "build:js": "copyfiles -u 1 ./src/js/**/* public",
     "build:sass": "sass  --no-source-map src/sass:public/css",
     "build:images": "copyfiles -u 1 ./src/images/**/* public",
     "copy:images": "copyfiles -u 1 ./src/images/**/* public",
