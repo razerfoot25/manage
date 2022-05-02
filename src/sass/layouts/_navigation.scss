@@ -4,17 +4,18 @@
   flex-direction: column;
   position: relative;
   padding: 2.5em 1.75em;
-  header {
+  &__secondary-header {
     display: flex;
     justify-content: space-between;
   }
   input {
     display: none;
     &:checked {
-      ~ header > .navigation__menu-icon {
+      ~ div > .navigation__menu-icon {
+        padding-left: 0.5em;
         img {
           content: url("../images/icon-close.svg");
-          width: 1.35em;
+          width: 1.25em;
         }
       }
       ~ .navigation__menubar {
