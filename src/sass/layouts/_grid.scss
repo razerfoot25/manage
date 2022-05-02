@@ -1,0 +1,71 @@
+@use "../abstracts/breakpoints" as *;
+.main {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1em;
+}
+.hero {
+  display: grid;
+  grid-auto-flow: row;
+
+  &--textfield {
+    grid-row: 2;
+  }
+}
+
+.product {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2.5em;
+}
+
+.footer {
+  display: grid;
+  grid-auto-flow: row;
+
+  &__lower {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 2em;
+    &--1 {
+      grid-row: 3;
+    }
+    &--3 {
+      grid-row: 1;
+    }
+  }
+}
+
+@include breakpoint(large) {
+  .main {
+    gap: 4em;
+  }
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 1em;
+    &--textfield {
+      grid-row: 1;
+    }
+  }
+
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer {
+    &__lower {
+      grid-template-columns: repeat(3, 1fr);
+
+      &--1 {
+        grid-row: 1 / span 2;
+      }
+
+      &--2 {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      }
+    }
+  }
+}

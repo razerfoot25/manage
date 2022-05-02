@@ -1,0 +1,32 @@
+@use "./fonts" as *;
+@use "./colors" as *;
+@use "../abstracts/breakpoints" as b;
+
+:root {
+  @each $base, $shade in $colors {
+    @each $shades, $colors in $shade {
+      --clr-#{$base}-#{$shades}: #{$colors};
+    }
+  }
+  @each $base, $weights in $weight {
+    @each $weight, $value in $weights {
+      --fw-#{$base}-#{$value}: #{$value};
+    }
+  }
+}
+
+@each $elem, $value in $size {
+  @each $type, $size in $value {
+    @if ($elem == small) {
+      #{$type} {
+        font-size: $size;
+      }
+    } @else if($elem != small) {
+      @include b.breakpoint(#{$elem}) {
+        #{$type} {
+          font-size: $size;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+$size: (
+  small: (
+    h1: 2rem,
+    h2: 1.8rem,
+    h3: 0.9rem,
+    h4: 1.8rem,
+    h5: 2.3rem,
+    strong: 1.6rem,
+    p: 0.875rem,
+    a: 1rem,
+    button: 0.9rem,
+  ),
+  medium: (
+    h1: 3.3rem,
+    h2: 2.4rem,
+    h3: 1rem,
+    h4: 2.4rem,
+    h5: 2.5rem,
+    p: 1rem,
+  ),
+);
+
+$weight: (
+  primary: (
+    500: 400,
+    600: 500,
+    700: 700,
+  ),
+);

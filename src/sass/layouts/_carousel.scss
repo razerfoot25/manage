@@ -1,0 +1,30 @@
+@use "../abstracts/breakpoints" as *;
+
+.carousel__container {
+  //min-width: 360px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, Minmax(21rem, 43rem));
+  min-height: 20rem;
+  padding-inline: 1.5em;
+  > div {
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+  }
+}
+.carousel {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  transition: transform 500ms ease-in;
+
+  .main__page-3--reviews--items {
+    position: absolute;
+    top: 3em;
+    bottom: 0;
+    right: 0;
+    padding-inline: 1.25em;
+    width: 100%;
+  }
+}

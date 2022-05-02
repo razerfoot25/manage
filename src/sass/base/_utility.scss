@@ -1,0 +1,44 @@
+@use "../abstracts/breakpoints" as *;
+
+.container {
+  max-width: 90rem;
+  padding: 1.5em 1.75em;
+  margin: 0 auto;
+
+  @include breakpoint(large) {
+    padding-inline: 7em;
+  }
+}
+.spacer {
+  > * + * {
+    margin-top: 1.5em;
+  }
+}
+.btn {
+  padding: 1em 2em;
+  border-radius: 30px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-weight: var(--fw-primary-700);
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.btn-red {
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-400);
+  box-shadow: 0 15px 25px -8px var(--clr-primary-600);
+}
+
+.btn-red-nbs {
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-400);
+}
+
+.btn-white {
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-primary-600);
+  box-shadow: 0 2px 25px -15px var(--clr-primary-700);
+}

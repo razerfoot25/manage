@@ -1,0 +1,94 @@
+@use "../abstracts/breakpoints" as *;
+.navigation {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 2.5em 1.75em;
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  input {
+    display: none;
+    &:checked {
+      ~ header > .navigation__menu-icon {
+        img {
+          content: url("../images/icon-close.svg");
+          width: 1.35em;
+        }
+      }
+      ~ .navigation__menubar {
+        display: block;
+      }
+    }
+  }
+  &__menu-icon {
+    img {
+      content: url("../images/icon-hamburger.svg");
+      width: 2em;
+    }
+  }
+
+  &__menubar {
+    display: none;
+    position: fixed;
+    inset: 3em 0 0 0;
+    padding: 3em 1.5em;
+    background: linear-gradient(var(--clr-neutral-350), var(--clr-neutral-650));
+    &--container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5em;
+      padding-block: 2.5em;
+      background-color: var(--clr-neutral-400);
+      border-radius: 5px;
+      box-shadow: 0 0 5em -4em;
+    }
+    &--items {
+      a {
+        text-decoration: none;
+        font-weight: var(--fw-primary-700);
+        color: var(--clr-primary-700);
+      }
+    }
+  }
+
+  &__button-container {
+    display: none;
+  }
+
+  @include breakpoint(large) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 2em;
+    &__menu-icon {
+      display: none;
+    }
+    &__menubar {
+      display: block;
+      position: unset;
+      background: unset;
+      padding-block: 0;
+      &--container {
+        flex-direction: row;
+        gap: 2.75em;
+        background-color: unset;
+      }
+
+      &--items {
+        a {
+          font-weight: var(--fw-primary-500);
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    &__button-container {
+      display: block;
+      padding-right: 2em;
+    }
+  }
+}

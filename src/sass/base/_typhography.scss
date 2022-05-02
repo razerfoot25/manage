@@ -1,0 +1,27 @@
+@use "../abstracts/breakpoints" as *;
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+p {
+  line-height: 2;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.4;
+}
+
+@include breakpoint(large) {
+  h1,
+  h2 {
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}

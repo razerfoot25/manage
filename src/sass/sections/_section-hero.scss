@@ -1,0 +1,40 @@
+@use "../components/buttons" as b;
+@use "../abstracts/breakpoints" as *;
+.hero {
+  margin-bottom: 2em;
+  &--image {
+    content: url("../images/illustration-intro.svg");
+  }
+  &--textfield {
+    text-align: center;
+    padding-inline: 1em;
+
+    h1 {
+      color: var(--clr-primary-700);
+    }
+
+    p {
+      color: var(--clr-neutral-600);
+      padding-top: 0.5em;
+    }
+    button {
+      margin-top: 2em;
+    }
+  }
+  @include breakpoint(large) {
+    &--textfield {
+      text-align: left;
+      padding: 0;
+      margin-bottom: 3.5em;
+      h1 {
+        padding-right: 2em;
+      }
+      p {
+        padding-right: 16em;
+      }
+      button {
+        margin-top: 3em;
+      }
+    }
+  }
+}

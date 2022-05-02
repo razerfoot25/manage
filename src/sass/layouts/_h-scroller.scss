@@ -1,0 +1,24 @@
+@use "../abstracts/breakpoints" as *;
+
+.h-scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 70%;
+  overflow-x: auto;
+
+  gap: 1.2em;
+  max-width: 90rem;
+  padding: 3em 1.5em 0 1.5em;
+
+  scroll-snap-type: inline mandatory;
+
+  scroll-padding-inline: 1.5em;
+
+  & > * {
+    scroll-snap-align: center;
+  }
+
+  @include breakpoint(large) {
+    grid-auto-columns: 37.5%;
+  }
+}

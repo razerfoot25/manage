@@ -1,0 +1,14 @@
+@use "../abstracts/breakpoints" as *;
+body {
+  background-image: url("../images/bg-tablet-pattern.svg"),
+    url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-position: 20vw -3em, 60vw 27.5em;
+
+  @include breakpoint(large) {
+    background-position: 56vw -10em, -500px 73em;
+    background-size: 55%, 55%;
+  }
+  // overflow-x: hidden;
+}

@@ -1,0 +1,69 @@
+@use "../abstracts/breakpoints" as *;
+.product {
+  &--card-1 {
+    text-align: center;
+    padding-inline: 0.75em;
+    h2 {
+      color: var(--clr-primary-700);
+    }
+    p {
+      color: var(--clr-neutral-600);
+    }
+  }
+
+  &--card-2 {
+    &--articles {
+      &__heading {
+        max-width: 92vw; // mobl only
+        width: 100vw; // moble only
+        margin: 0 calc(-43vw + 50%); // mobli only
+
+        color: var(--clr-primary-700);
+        background-color: var(--clr-neutral-500);
+        padding-block: 0.5em;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        span {
+          padding: 0.55em 1em;
+          background-color: var(--clr-primary-600);
+          color: var(--clr-neutral-400);
+          border-radius: 20px;
+        }
+      }
+      &__text {
+        margin-top: 1em;
+        color: var(--clr-neutral-600);
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    &--card-1 {
+      text-align: left;
+      padding: 0;
+
+      p {
+        padding-right: 15em;
+      }
+    }
+
+    &--card-2 {
+      &--articles {
+        &__heading {
+          width: auto;
+          margin-inline: 0;
+          background-color: transparent;
+          span {
+            padding: 0.5em 1.5em;
+            border-radius: 30px;
+            margin-right: 1em;
+          }
+        }
+        &__text {
+          margin-left: 5.5em;
+          margin-right: 3em;
+        }
+      }
+    }
+  }
+}
