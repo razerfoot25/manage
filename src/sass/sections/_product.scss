@@ -1,8 +1,9 @@
 @use "../abstracts/breakpoints" as *;
 .product {
+  padding-inline: 0;
   &--card-1 {
     text-align: center;
-    padding-inline: 0.75em;
+    padding-inline: 1.75em;
     h2 {
       color: var(--clr-primary-700);
     }
@@ -13,11 +14,8 @@
 
   &--card-2 {
     &--articles {
+      padding-left: 1.5em;
       &__heading {
-        max-width: 92vw; // mobl only
-        width: 100vw; // moble only
-        margin: 0 calc(-43vw + 50%); // mobli only
-
         color: var(--clr-primary-700);
         background-color: var(--clr-neutral-500);
         padding-block: 0.5em;
@@ -33,11 +31,13 @@
       &__text {
         margin-top: 1em;
         color: var(--clr-neutral-600);
+        padding-right: 1.5em;
       }
     }
   }
 
   @include breakpoint(large) {
+    padding-inline: 7em;
     &--card-1 {
       text-align: left;
       padding: 0;
@@ -49,6 +49,7 @@
 
     &--card-2 {
       &--articles {
+        padding-left: 0;
         &__heading {
           width: auto;
           margin-inline: 0;
